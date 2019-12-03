@@ -1,0 +1,9 @@
+<h1 align="center">All Activities</h1>
+<h2>Github</h2>
+<% @result.each_with_index do |result, index| %>
+  <h5>Type: </h5><%= result["type"] %>
+  <h5>Action: </h5><%= result["payload"]["action"] %>
+  <h5>Actor: </h5><a href="<%= result["actor"]["url"] %>"></a><%= result["actor"]["login"] %>
+  <h5>Repo: </h5><%= result["repo"]["name"] %><br>
+  ------------------------------
+<% end %>

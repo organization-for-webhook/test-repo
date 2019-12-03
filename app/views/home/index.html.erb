@@ -1,0 +1,10 @@
+<h1>Home#index <%= current_user.name %></h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<h1>List of all Users</h1>
+<% @users.each do |user| %>
+  <li><%= link_to user.email, activities_path(id: user.id) %></li>
+<% end %>
+
+<%= link_to "log out", destroy_user_session_path, method: :delete %>
+<%= link_to "edit", edit_user_registration_path %>
